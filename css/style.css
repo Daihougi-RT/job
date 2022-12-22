@@ -12,14 +12,14 @@ body {
 @media screen and ( min-width:480px )
 {
     .contact {
-        width: 800px;
+        width: 700px;
         margin: 0 auto;
         padding: 60px 0;
     }
 }
 
 .contact-ttl {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 40px;
     text-align: center;
@@ -51,20 +51,20 @@ body {
 
 .contact-item {
     text-align: left;
-    width: 30%;
+    width: 35%;
     background-color: #eee;
 }
 
 .contact-body {
-    width: 70%;
+    width: 65%;
 }
 
 .contact-body2 {
-    width: 70%;
+    width: 65%;
 }
 
 .contact-body3 {
-    width: 70%;
+    width: 65%;
 }
 
 .form-text {
@@ -313,3 +313,4 @@ body {
     cursor: pointer;
 }
 }
+
