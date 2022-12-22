@@ -1,0 +1,101 @@
+<!DOCTYPE html>  
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="大放技求人情報取得フォーム" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>会員専用求人情報確認フォーム</title>
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
+        <link rel="stylesheet" href="css/style.css" media="all" />
+    </head>
+    <body>
+        <div class="contact">
+            <h1 class="contact-ttl" id="edit_area2">会員専用求人情報確認フォーム</h1>       
+                <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSe3_JjULT55c7m0WHIzB4EIIqQi7m0-HLmRKchSixXcR_2G7Q/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+                    
+                <table class="contact-table">
+                    <tr>
+                        <th class="contact-item">氏　名</th>
+                        <td class="contact-body">
+                            <input type="text" name="entry.1567900522" required="required" placeholder="必須" class="form-text"/>           
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact-item">所属施設</th>
+                        <td class="contact-body">
+                            <input type="text" name="entry.980738675" required="required" placeholder="必須（勤務先or自宅）" class="form-text2"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact-item">メールアドレス</th>
+                        <td class="contact-body">
+                            <input id="email_1" name="entry.1966839433" type="email" required="required" placeholder="必須" class="form-text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact-item">メールアドレス（確認用）</th>
+                        <td class="contact-body">
+                            <input type="email" id="email_2" required="required" placeholder="必須" name="entry.1240361399" class="form-text" oninput="CheckEmail_2(this)" value=""/>
+                        </td>
+                    </tr>                  
+                    <tr>
+                        <th class="contact-item">大放技番号</th>
+                        <td class="contact-body">
+                            <input type="number" name="entry.492227858" id ="dn" required="required" placeholder="必須" class="form-text3"/>
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <th class="contact-item">ブロック名</th>
+                        <td class="contact-body">
+                            <select name="entry.1267249649" required="required" class="form-select" id ="bn">
+                            　　<option value="ブロック名">選択してください</option>
+                                <option value="中央ブロック">中央ブロック</option>
+                                <option value="東ブロック">東ブロック</option>
+                                <option value="西ブロック">西ブロック</option>
+                                <option value="南ブロック">南ブロック</option>
+                                <option value="北ブロック">北ブロック</option>
+                            </select>
+                        </td>
+                    </tr>
+                    
+                </table>
+
+                <input class="contact-submit" id="conf" type="submit" name="submit" value="申　請" />
+            </form>
+
+            <script>
+                let submitted = false;
+            
+                const page_transition = function () {
+                    if(submitted){
+                        window.location = 'send.html';
+                    }
+                }
+            </script>    
+            <iframe name="hidden_iframe" style="display:none;" onload="page_transition()"></iframe>
+            
+            <script language="JavaScript" type="text/javascript">
+           // <!--
+              function CheckEmail_2(input){              
+                //IE対応の為変更
+                //var mail = email_2.value;
+                //メールフォームの値を取得
+                //var form = document.getElementById("email_1");
+                var mail = document.getElementById("email_1").value; //メールフォームの値を取得
+                var mailConfirm = input.value; //メール確認用フォームの値を取得(引数input)
+ 
+                //input.setCustomValidity(mail)
+                // パスワードの一致確認
+                if(mail != mailConfirm){
+                  input.setCustomValidity('メールアドレスが一致しません'); // エラーメッセージのセット
+                }else{
+                  input.setCustomValidity(''); // エラーメッセージのクリア
+                }
+              }    
+              
+            // -->
+            </script>            
+        </div>
+    </body>
+</html>
